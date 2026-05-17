@@ -3,7 +3,9 @@
     "allow": [
       "Bash(npm run *)",
       "Bash(curl -s http://localhost:3000)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/workflow)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/workflow)",
+      "WebSearch",
+      "Bash(npx tsc *)"
     ]
   }
 }

@@ -1,16 +1,19 @@
-'use client';
+interface CanvasBackgroundProps {
+  position: { x: number; y: number };
+  scale: number;
+}
 
-export function CanvasBackground() {
+export function CanvasBackground({ position, scale }: CanvasBackgroundProps) {
   return (
     <div
-      className="absolute inset-0 pointer-events-none"
+      className="absolute inset-0 pointer-events-none transition-all duration-75"
       style={{
-        backgroundImage: `
-          radial-gradient(circle, currentColor 1px, transparent 1px)
-        `,
-        backgroundSize: '20px 20px',
-        opacity: 0.1
+        backgroundImage: `radial-gradient(circle, currentColor 0.5px, transparent 0.5px)`,
+        backgroundSize: `${20 * scale}px ${20 * scale}px`,
+        backgroundPosition: `${position.x}px ${position.y}px`,
+        opacity: 0.15
       }}
     />
   );
 }
+
